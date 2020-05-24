@@ -8,13 +8,7 @@ const bodyParser = require("body-parser"),
 const port = process.env.PORT || 3000;
 
 // APP CONFIG
-//mongoose.connect(process.env.DataBaseURL);
-// mongoose.connect("mongodb://127.0.0.1:27017/Blogs",{useNewUrlParser: true,useUnifiedTopology: true});
-mongoose.connect("mongodb+srv://sumit:2000@blogs-aiifb.mongodb.net/test?retryWrites=true&w=majority",
-	{
-		useNewUrlParser: true,
-		useUnifiedTopology: true
-});
+mongoose.connect(process.env.DATABASEURL,{useNewUrlParser: true, useUnifiedTopology: true});
 app.set("view engine","ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
